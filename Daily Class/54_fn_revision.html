@@ -1,0 +1,26 @@
+<script>
+  var condtion = "Subtract";
+  var result;
+
+  let fvalue = 25;
+  let svalue = 30;
+
+  if (condtion == "Add")
+  {
+    result = sum(fvalue, svalue);
+  } 
+  else if (condtion == "Subtract")
+  {
+    result = sub(svalue, fvalue);
+  }
+
+  function sum(f, s) {
+    return f + s;
+  }
+
+  function sub(firstValue, secondValue) {
+    return firstValue - secondValue;
+  }
+
+  console.log(result);
+</script>

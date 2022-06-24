@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <h1>Constorl Statement Swtich</h1>
+    <p>Find greater A is less then or greater then by 10</p>
+
+    <input type="text" id="firstNumber">
+    <br/><br/>
+
+    <button id="btn">Check</button>
+    <p><strong id="output"></strong></p>
+    
+</body>
+</html>
+
+<script>
+    document.getElementById('btn').addEventListener("click", function() {
+        var a = document.getElementById('firstNumber').value;
+
+        switch (a) {
+            case '5':
+                document.getElementById('output').innerText = "Input value is 5";
+                console.log("5");
+                break;
+
+            case '10':
+                document.getElementById('output').innerText = "Input value is 10";
+                console.log("10");
+                break;
+            default :
+                document.getElementById('output').innerText = "This is not 5 neither 10";
+        }
+
+    });
+</script>

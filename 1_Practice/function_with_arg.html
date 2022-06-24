@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <style>
+      .form-control {
+        margin-top: 20px;
+      }
+      .container {
+        width: 35%;
+        margin: 0 auto;
+      }
+      body {
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      }
+      .form-control input, .form-control select {
+          width: 100%;
+          padding: 10px;
+          border: 2px solid rgba(51, 51, 235, 0.644);
+          border-radius: 5px;
+      }
+      .form-control button {
+          width: 100%;
+          height: 40px;
+          background: rgb(84, 84, 238);
+          color: white;
+          border: 1px solid rgb(84, 84, 238);
+          border-radius: 5px;
+          font-size: 24px;
+      }
+      .form-control button:hover {
+          background: blue;
+          cursor: pointer;
+      }
+      .success {
+        background: rgb(139 193 59);
+        color: white;
+        font-size: 48px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .error-border{
+          border: 1px solid red;
+      }
+      .error {
+          display: block;
+          color: red;
+          margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Sum/Muliplayer of two number</h1>
+        <div class="form-control">
+            <input type="text" placeholder="First Value" id="firstValue" />
+            <label class="error"id='first-error'></label>
+        </div>
+    
+        <div class="form-control">
+            <input type="text" placeholder="Secound Value" id="secondValue" />
+            <label class="error"id='second-error'></label>
+        </div>
+        <div class="form-control">
+            <select id="identifier">
+            <option value="">--- Select ---</option>
+            <option value="add">Addition</option>
+            <option value="multi">Multiply</option>
+            </select><label class="error"id='identifier-error'></label>
+        </div>
+    
+        <div class="form-control">
+            <button onclick="dosomething()">ok</button>
+        </div>
+    
+        <div class="form-control" id="op"></div>
+      </div>
+  </body>
+</html>
+<script>
+  function arthmatic(first, second, identifeir) {
+    var output;
+    if (identifeir == "add") {
+      output = parseInt(first) + parseInt(second);
+    } else {
+      output = parseInt(first) * parseInt(second);
+    }
+    return output;
+  }
+
+  function dosomething() {
+    var first = document.getElementById("firstValue");
+    var second = document.getElementById("secondValue");
+    var identifire = document.getElementById("identifier");
+    
+    var erroFlag = false;
+    if ( first.value == "") {
+        erroFlag = true;
+        first.classList.add('error-border');
+        document.getElementById('first-error').innerText = 'please enter the value';
+    }
+    else if( !(/^\d+$/.test(first.value)) ){
+        erroFlag = true;
+        first.classList.add('error-border');
+        document.getElementById('first-error').innerText = 'must be number';
+    }
+    else{
+        first.classList.remove('error-border');
+        document.getElementById('first-error').innerText = '';
+    }
+
+    if (second.value == "") {
+        erroFlag = true;
+        second.classList.add('error-border');
+        document.getElementById('second-error').innerText = 'please enter the value';
+    }
+    else if( !(/^\d+$/.test(second.value)) ){
+        erroFlag = true;
+        second.classList.add('error-border');
+        document.getElementById('second-error').innerText = 'must be number';
+    }
+    else {
+        second.classList.remove('error-border');
+        document.getElementById('second-error').innerText = ''; 
+    }
+
+    if (identifire.value == "") {
+        identifier.classList.add('error-border');
+        document.getElementById('identifier-error').innerText = 'select option';
+    }
+    else {
+        identifier.classList.remove('error-border');
+        document.getElementById('identifier-error').innerText =''   
+    }
+
+    if( erroFlag == false ) {
+        var response = arthmatic(first.value, second.value, identifire.value);
+        document.getElementById("op").innerHTML = `<div class='success'>${response}</div>`;
+    }
+
+  }
+</script>

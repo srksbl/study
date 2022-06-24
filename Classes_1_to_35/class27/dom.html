@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <title>Document Object Model (DOM)</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h1>World</h1>
+
+    <p id="title">World</p>
+
+    <p class="description">Hello World</p>
+
+    <!-- Js code ster here -->
+    <script>
+        // Tag selector in js
+       var heading = document.getElementsByTagName('h1');
+       heading[0].style.color = "blue";
+       heading[1].style.color = "red";
+        // End Tag Selector in js
+
+        // Id selector
+        var title = document.getElementById('title');
+        title.innerHTML = "World to Hello Shahrukh";
+        title.style.background = 'green';
+        title.style.fontSize = '36px';
+        // End Id selector
+
+        // Class selector in js
+        var des = document.getElementsByClassName('description');
+        des[0].innerHTML = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas inventore ratione modi delectus perferendis tempora veniam molestiae voluptatum rerum rem numquam, quos quae aliquid, repellat eum tempore impedit. Maxime, facere!';
+        // End Class selector in js
+
+    </script>
+    <!-- Js code end here -->
+</body>
+</html>
+

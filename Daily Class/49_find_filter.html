@@ -1,0 +1,49 @@
+<script>
+  const users = [
+    {
+      id: 1,
+      fname: "Areeb",
+      lname: "Kha",
+      standard: "3rd class",
+      address: "Niyawali"
+    },
+    {
+      id: 2,
+      fname: "Shahrukh",
+      lname: "Khan",
+      standard: "B.Tech",
+      address: "Niyawali"
+    },
+    {
+      id: 3,
+      fname: "Shahnawaz",
+      lname: "Khan",
+      standard: "B.SC",
+      address: "Niyawali"
+    },
+    {
+      id: 4,
+      fname: "Mohsin",
+      lname: "Khan Ali",
+      standard: "10th",
+      address: "Rustumpur Niyawali"
+    },
+    {
+      id: 5,
+      fname: "Mohsin",
+      lname: "Khan",
+      standard: "10th",
+      address: "Rustumpur Niyawali"
+    }
+  ];
+
+  var searchItem = users.find(function(item){
+    return item.fname == 'Mohsin'
+  });
+  console.log(searchItem);
+
+  var searchByfilter = users.filter(function(item){
+    return item.fname == 'Mohsin'
+  });
+  console.log(searchByfilter)
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+</head>
+<body>
+    <h1 id = 'output'></h1>
+    
+</body>
+</html>
+<script>
+    var today = new Date();
+
+    let second = today.getSeconds();
+    let minute = today.getMinutes();
+    let hours = today.getHours();
+    setInterval( () => {
+        second = second + 1; 
+        if ( second == 60) {
+            second = 0;
+            minute = minute + 1;
+        }
+        if ( minute == 60 ) {
+            minute = 0;
+            hours = hours + 1;
+        }
+
+        show(`${hours}:${minute}:${second}`);
+    } ,  1000)
+
+
+    function show(data) {
+        document.getElementById('output').innerHTML = data ;
+    }
+
+    show(`${hours}:${minute}:${second}`);
+
+</script>
+
+
+
+
+

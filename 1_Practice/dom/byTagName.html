@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TagName</title>
+</head>
+<body>
+    <li class="first">shahnawaz</li>
+    <li class="first">moshin</li>
+    <li id="shah">hello</li>
+
+    <h1>heading  1</h1>
+    <p1>pargraph 1</p1>
+    <h1>heading 2</h1>
+    <p1>pargraph 2</p1>
+    <h1>heading 3</h1>
+    <p1>pargraph 3</p1>
+</body>
+</html>
+<script>
+    let elm = document.getElementsByTagName('h1');
+    for(i=0; i < elm.length; i++){
+        elm[i].innerHTML = 'shahrukh';
+    }
+</script>

@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <title>Relative</title>
+    <style>
+        .row {
+            display: flex;
+        }
+        .row1 {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            border: 1px solid black;
+            margin-right: 5px;
+        }
+        .row2 {
+            left: 40px;
+            top: 40px;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 0, 128);
+            border: 1px solid black;
+        }
+
+        .row3 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(149, 149, 228);
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="row">
+        <div class="row1"></div>
+        <div class="row2">
+            <div class="row3"></div>
+        </div>
+    </div>
+  </body>
+</html>

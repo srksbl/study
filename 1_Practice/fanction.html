@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FANCTION</title>
+  </head>
+  <body>
+    <h1>function</h1>
+    <div><label>A</label><input type="text" id="a" /></div>
+    <br />
+    <div><label>B</label><input type="text" id="b" /></div>
+    <br />
+    <button onclick="sumOfTowNumber()">click</button>
+    <div id="output"></div>
+  </body>
+</html>
+<script>
+  function add() {
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+    z = parseInt(a) + parseInt(b);
+
+    return z;
+  }
+
+  function sumOfTowNumber() {
+    document.getElementById("output").innerHTML = add();
+  }
+</script>

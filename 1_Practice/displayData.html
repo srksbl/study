@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Data</title>
+    <style>
+      table tr td,
+      th {
+        padding: 10px;
+      }
+      .delete,
+      .addNewRecord {
+        padding: 5px;
+        background: rgb(94, 94, 228);
+        color: white;
+        border-radius: 5px;
+        border: 1px solid blue;
+      }
+      .delete:hover,
+      .addNewRecord:hover,
+      .btn button:hover {
+        background: blue;
+        cursor: pointer;
+      }
+      .form-control input {
+        margin-left: 30%;
+        font-size: 18px;
+        width: 50%;
+        padding: 10px;
+        border: 1px solid rgb(73, 73, 243);
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .btn {
+        margin-left: 30%;
+        width: 50%;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }
+      h2 {
+        margin-left: 30%;
+      }
+      input {
+        margin-top: 10px;
+      }
+
+      .submitClass {
+        width: 100%;
+        padding: 10px;
+        background: rgb(94, 94, 228);
+        color: white;
+        border-radius: 5px;
+        border: 1px solid blue;
+      }
+      .error {
+            color: red;
+            margin-top: 5px;
+          
+      }
+      .error-border {
+                    border: 1px solid red !important;
+         }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table width="100%" cellspacing="0" cellpadding="0" border="1px">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Full Name</th>
+            <th>Standard</th>
+            <th>Address</th>
+            <th>
+              Action
+              <button class="addNewRecord" onclick="createNewRecord()">
+                +
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="mytable"></tbody>
+      </table>
+    </div>
+    <div class="form-control" id="createForm"></div>
+  </body>
+</html>
+<script>
+  // main data
+  const users = [
+    {
+      id: 1,
+      fname: "Areeb",
+      lname: "Kha",
+      standard: "3rd class",
+      address: "Niyawali",
+      fullName: function () {
+        return this.fname + " " + this.lname;
+      },
+    },
+    {
+      id: 2,
+      fname: "Shahrukh",
+      lname: "Khan",
+      standard: "B.Tech",
+      address: "Niyawali",
+      fullName: function () {
+        return this.fname + " " + this.lname;
+      },
+    },
+    {
+      id: 3,
+      fname: "Shahnawaz",
+      lname: "Khan",
+      standard: "B.SC",
+      address: "Niyawali",
+      fullName: function () {
+        return this.fname + " " + this.lname;
+      },
+    },
+    {
+      id: 4,
+      fname: "Mohsin",
+      lname: "Khan Ali",
+      standard: "10th",
+      address: "Rustumpur Niyawali",
+      fullName: function () {
+        return this.fname + " " + this.lname;
+      },
+    },
+  ];
+  // render or display data in table
+  function displayTableData() {
+    let text = "";
+    users.forEach(function (item, index) {
+      text += `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.fname}</td>
+                    <td>${item.lname}</td>
+                    <td>${item.fullName()}</td>
+                    <td>${item.standard}</td>
+                    <td>${item.address}</td>
+                    <td>
+                        <button class='delete' onClick='deleteItem(${item.id})'>
+                          Delete
+                        </button>
+                        <button class='delete' onClick='editRecord(${item.id})'>
+                          Edit
+                        </button>
+                    </td>
+                </tr>
+            `;
+    });
+
+    document.getElementById("mytable").innerHTML = text;
+  }
+
+  // calling display function to print or refresh data in table
+  displayTableData();
+
+  /*
+   * Funtion for deleting user
+   * Params - id
+   * return - refresh data
+   **/
+  function deleteItem(id) {
+    var isDelete = confirm("Are you sure you want to delete this?");
+    if(isDelete) {
+        users.forEach(function (el, index) {
+            if (el.id == id) {
+                users.splice(index, 1);
+            }
+        });
+        displayTableData();
+
+        // users.find(function(el, index){
+        //     if (el.id == id) {
+        //         users.splice(index, 1);
+        //     }
+        //     displayTableData();
+        // });
+    }
+  }
+
+  // function to create new record form   
+  function createNewRecord() {
+    document.getElementById("createForm").innerHTML = `<form onSubmit='addRecord(event)'>
+            <h2>Add New Record</h2>
+            <div class="form-control">
+                <input type="text" name="First" placeholder="First Name"/>
+                <label class='error' id='error-Element'></label>
+            </div>
+            <div class="form-control">
+                <input type="text" name="Last" placeholder="Last Name"/>
+                <label class='error' id='error-Element-1'></label>
+
+            </div>
+            <div class="form-control">
+                <input type="text" name="Standard" placeholder="Standard"/>
+                <label class='error' id='error-Element-2'></label>
+
+            </div>
+            <div class= "form-control">
+                <input type="text" name="Address" placeholder="Address"/>
+                <label class='error' id='error-Element-3'></label>
+
+            </div>
+            <div class="btn">
+                <button class='submitClass'>sbumit</button>
+            </div>
+        </form>`;
+  }
+
+  // function to add new record in exisiting users data   
+  function addRecord(e) {
+    e.preventDefault();
+    var firstName = e.target.elements.First.value;
+    var lastName = e.target.elements.Last.value;
+    var designation = e.target.elements.Standard.value;
+    var addr = e.target.elements.Address.value;
+
+    const isValid = validation(firstName, lastName, designation, addr);
+    if(!isValid) {
+      let newData = {
+        id: users.length + 1,
+        fname: firstName,
+        lname: lastName,
+        standard: designation,
+        address: addr,
+        fullName: function () {
+          return this.fname + " " + this.lname;
+        },
+      };
+
+      users.push(newData);
+
+      displayTableData();
+    }
+    
+  }
+
+  // function to validate input fields
+  function validation(firstName, lastName, designation, addr) {
+    var errorFlag = false;
+    if (firstName == '') {
+      errorFlag = true;
+      
+      document.getElementById('error-Element').innerText = 'this field is required';
+    }
+
+    if (lastName == '') {
+      errorFlag = true;
+      document.getElementById('error-Element-1').innerText = 'this field is required';
+    }
+    if(designation == ''){
+      errorFlag = true;
+      document.getElementById('error-Element-2').innerText = 'this field is required';
+
+    }
+    if(addr == ''){
+      errorFlag = true;
+      document.getElementById('error-Element-3').innerText = 'this field is required';
+    }
+
+    return errorFlag;
+  }
+
+  // Function to rednder edit record in form
+  function editRecord(id) {
+    const record = users.find(function(item) {
+      return item.id == id;
+    });
+
+    document.getElementById("createForm").innerHTML =
+    `<form onSubmit='updateRecord(event)'>
+      <h2>Update Record</h2>
+      <div class="form-control">
+          <input type="hidden" value='${record.id}'' name="Id" />
+          <input type="text" value=${record.fname} name="First" placeholder="First Name"/>
+          <label class='error' id='error-Element'></label>
+      </div>
+      <div class="form-control">
+          <input type="text" value='${record.lname}' name="Last" placeholder="Last Name"/>
+          <label class='error' id='error-Element-1'></label>
+
+      </div>
+      <div class="form-control">
+          <input type="text" value='${record.standard}' name="Standard" placeholder="Standard"/>
+          <label class='error' id='error-Element-2'></label>
+
+      </div>
+      <div class= "form-control">
+          <input type="text" value='${record.address}' name="Address" placeholder="Address"/>
+          <label class='error' id='error-Element-3'></label>
+
+      </div>
+      <div class="btn">
+          <button class='submitClass'>Update</button>
+      </div>
+    </form>`;
+  }
+
+
+  function updateRecord(e) {
+    e.preventDefault();
+    var id = e.target.elements.Id.value;
+
+    var firstName = e.target.elements.First.value;
+    var lastName = e.target.elements.Last.value;
+    var designation = e.target.elements.Standard.value;
+    var addr = e.target.elements.Address.value;
+
+    const isValid = validation(firstName, lastName, designation, addr);
+    if(!isValid) {
+      users.forEach(function(item) {
+        if(item.id == id) {
+          item.fname = firstName;
+          item.lname = lastName;
+          item.standard = designation;
+          item.address = addr;
+        }
+      });
+
+      displayTableData();
+      document.getElementById("createForm").innerHTML = null;
+    }
+  }
+</script>

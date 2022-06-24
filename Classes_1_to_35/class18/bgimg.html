@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG</title>
+    <style>
+        div {
+            width: 400px;
+            height: 44px;
+        }
+        .row {
+            left: 0;
+            width: 44px;
+            background: url(img.gif) 0 0;
+            background-repeat: no-repeat;
+        }
+        .row:hover {
+            left: 0;
+            width: 44px;
+            background: url(img.gif) 0 -45px;
+            background-repeat: no-repeat; 
+        }
+        a[target="_blank"] {
+            color: red;
+        }
+        h1[title="Shahrukh"] {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row"></div>
+    <br>
+    <div class="row2">
+        <a href="#" target="_blank">Home</a>
+
+        <br>
+
+        <a href="#">About</a>
+
+        <br>
+        <h1 title="Shahrukh">Hello</h1>
+        <h1>World</h1>
+    </div>
+
+    <br><br><br><br><br><br>
+
+    <div class="row3">
+        <p id="name">Shahrukh</p>
+    </div>
+    
+</body>
+</html>
+
+<script>
+let text = "";
+for (let i = 0; i < 20; i++) {
+  text += i+1 + ": " + "Shahrukh" + "<br>";
+}
+document.getElementById("name").innerHTML = text;
+</script>

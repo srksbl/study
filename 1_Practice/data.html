@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+</head>
+<body>
+    <div class="container">
+        <table width="100%" cellspacing="0" cellpadding="0" border="1px" >
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>standard</th>
+                    <th>address</th>
+                  </tr>
+            </thead>          
+            <tbody id="mytable"></tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
+<script>
+    const users = [
+        {
+            id: 1,
+            name: 'Areeb Khan',
+            standard: '3rd class',
+            address: 'Niyawali'
+        },
+        {
+            id: 2,
+            name: 'Shahrukh Khan',
+            standard: 'B.Tech',
+            address: 'Rustumpur Niyawali'
+        },
+        {
+            id: 3,
+            name: 'Shahnawaz Khan',
+            standard: 'B.SC',
+            address: 'Niyawali'
+        }
+    ];
+    let text = '';
+    // for(let x in users) {
+    //     // text += "<tr><td>" + users[x].id + "</tr></td>";
+    //     text += `
+    //         <tr>
+    //             <td>${users[x].id}</td>
+    //             <td>${users[x].name}</td>
+    //             <td>${users[x].standard}</td>
+    //             <td>${users[x].address}</td>
+    //         </tr>
+    //     `;
+    // }
+
+    users.forEach(function(item, index) {
+        text += `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.standard}</td>
+                <td>${item.address}</td>
+            </tr>
+        `;
+    });
+
+    document.getElementById("mytable").innerHTML =text;
+</script>

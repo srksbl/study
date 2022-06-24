@@ -1,0 +1,44 @@
+<script>
+    var name = "Shahrukh";
+    var msg = "Hello";
+
+    var obj = {
+        id: 1,
+        mobile: "972948752946",
+        name,
+        msg
+    }
+
+    console.log(obj);
+
+    // rest operator
+    function sum(...data) {
+
+        const sum = data.reduce(function(a, b){
+            return a + b;
+        }, 0)
+
+        console.log(sum);
+
+    }
+
+    sum(1, 5, 6, 7, 8, 9, 4, 5, 3, 5, 6, 9, 12, 45, 67);
+
+    // destructing of object 
+    const object = {
+        id: 1,
+        name: 'Shahrukh',
+        mobile: '987654321',
+        addres: 'Niayawali'
+    }
+
+    // var name = object.name;
+    // var id = object.id;
+    // var mobile = object.mobile;
+    // var addres = object.addres;
+
+    var { name, id, mobile, addres } = object; // destrcuturing
+
+    console.log(name);
+    console.log(mobile);
+</script>

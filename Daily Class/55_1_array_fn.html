@@ -1,0 +1,17 @@
+<script>
+    const salary = [1500, 10000, 20000, 8000, 50000, 17000, 75000];
+    salary.sort(function(a, b){
+        return b - a;
+    });
+    console.log(salary.slice(0, 3));
+
+    var fruits = ['mango','apply','banana','orange', 'mean'];
+    
+    // fruits.sort(function(a, b) {
+    //     return a > b ? -1 : 1;
+    // });
+    fruits.sort().reverse();
+    console.log(fruits);
+
+    console.log("Shahrukh".split("").reverse().join(""));
+    </script>

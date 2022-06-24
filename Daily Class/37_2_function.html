@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Function</title>
+</head>
+<body>
+    <h1>Function Example</h1>
+    
+    <h3 id="op1"></h3>
+    <h3 id="op2"></h3>
+    <h3 id="op3"></h3>
+</body>
+</html>
+
+<script>
+    // function initialize
+    function op1() {
+        document.getElementById('op1').innerHTML = "Shahrukh Khan First Example"
+    }
+
+    op1(); // calling function
+
+    // Example 2nd by return something from function
+    function op2() {
+        return "Shahnawaz Khan 2nd Example";
+    }
+    // display name from function op2
+    document.getElementById('op2').innerHTML = op2();
+
+    // function initialize
+    function showNameFromAnotherFunction() {
+        document.getElementById('op3').innerHTML = op2();
+    }
+
+    showNameFromAnotherFunction(); // calling function
+</script>

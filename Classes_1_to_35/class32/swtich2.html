@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swtich Example</title>
+</head>
+    <h1>Enter any fruit Name</h1>
+    <input type="text" id="fruitName" placeholder="Enter fruit name" onkeyup="findRateOfFruit(event)">
+
+    <br/><br/>
+
+    <strong id="output"></strong>
+    
+</body>
+</html>
+
+<script>
+    function findRateOfFruit(event) {
+        const expr = event.target.value.trim();
+        switch (expr) {
+            case 'Oranges':
+                document.getElementById('output').innerHTML = 'Oranges are Rs. 40 per kg.';
+                break;
+            case 'Mangoes':
+                document.getElementById('output').innerHTML = 'Mangoes are Rs. 60 per kg';
+                break;
+            case 'Papayas':
+                document.getElementById('output').innerHTML = 'Papayas RS. 30 per KG.';
+                break;
+            case 'Berry':
+            case 'Lichi':
+                document.getElementById('output').innerHTML = 'Berry and Lichi RS. 90 per KG.';
+                break;
+            default:
+                document.getElementById('output').innerHTML = `Sorry, we are out of ${expr}.`;
+            }
+        }
+
+    
+</script>

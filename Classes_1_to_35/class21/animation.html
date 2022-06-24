@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .animationDiv {
+        width: 100px;
+        background-color: red;
+        text-align: center;
+        padding: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 36px;
+        position: relative;
+
+        animation-name: example;
+        animation-duration: 4s;
+      }
+
+      @keyframes example {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+
+      .rightToLeftAnimation {
+        position: relative;
+        top: 300px;
+        width: 100px;
+        background-color: red;
+        text-align: center;
+        padding: 15px;
+        color: white;
+        font-weight: bold;
+
+        animation-name: righToLeft;
+        animation-duration: 4s;
+      }
+
+      @keyframes righToLeft {
+        0% {
+          transform: rotate(0deg);
+          top: 300px;
+          left: 0px;
+        }
+        25% {
+          transform: rotate(20deg);
+          top: 300px;
+          left: 0px;
+        }
+        50% {
+          transform: rotate(0deg);
+          top: 300px;
+          left: 90%;
+        }
+        55% {
+          transform: rotate(0deg);
+          top: 300px;
+          left: 90%;
+        }
+        70% {
+          transform: rotate(0deg);
+          top: 300px;
+          left: 90%;
+          background: #1ec7e6;
+        }
+        100% {
+          transform: rotate(-360deg);
+          top: 300px;
+          left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animationDiv">Shakeel</div>
+
+    <div class="rightToLeftAnimation">SHAHRUKH</div>
+  </body>
+</html>

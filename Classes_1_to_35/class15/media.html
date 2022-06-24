@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        .row {
+            display: flex;
+        }
+        .col {
+            box-sizing: border-box;
+            width: 25%;
+            margin-right: 5px;
+            text-align: justify;
+            background-color: rgba(0, 128, 0, 0.225);
+            padding: 40px;
+        }
+
+        @media screen and (max-width: 600px) { 
+            body {
+                background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+            }
+            .row {
+                display: block;
+            }
+            .col {
+                background-color: rgba(0, 128, 0, 0.074);
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .hidIfmax600 {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="full-width">
+        <h3>First row</h3>
+        <div class="row">
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+        </div>
+    </div>
+
+    <div class="hidIfmax600">
+        <h3>Second row</h3>
+        <div class="row">
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, nobis dolorum. Accusamus debitis praesentium incidunt! Reprehenderit quo veniam voluptas sapiente odit nobis eos, quae dicta magnam, magni ea, voluptatum ratione!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

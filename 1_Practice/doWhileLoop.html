@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoWhileLoop</title>
+</head>
+<style>
+    .mt-10 {
+             margin-top: 10px;
+         }
+      .error-border {
+                    border: 1px solid red !important;
+         }
+      .error {
+             display: block;
+             color: red;
+             margin-top: 5px;
+         }
+</style>
+<body>
+        <h1>do while loop</h1>
+        <div class="mt-10">
+            <input type="text" id="name"/>
+            <label class="error" id="name-error"></labe>
+        </div>
+        <div class="mt-10">
+            <input type="text" id="number"/>
+            <l abel class="error" id="number-error"></label>
+        </div>
+        <div class="mt-10">
+            <button onclick="showValue()">Show</button>
+        </div>
+        <div id="output"></div>
+        
+    
+</body>
+</html>
+<script>
+    function showValue(){
+        var op = document.getElementById('output');
+        op.innerHTML = null;
+
+        var erroFlag = false;
+        var name = document.getElementById('name');
+        if(name.value == "" ){
+            erroFlag = true;
+            name.classList.add('error-border');
+            document.getElementById('name-error').innerText = 'thish feild requird';
+        }
+        else if (name.value.length < 5){
+            erroFlag = true;
+            name.classList.add('error-border');
+            document.getElementById('name-error').innerText = 'must be grater than 5 characters';
+        }
+        else if ( !(/^[A-Za-z]/.test(name.value)) ){
+            erroFlag = true;
+            name.classList.add('error-border');
+            document.getElementById('name-error').innerText = 'only characters';
+        }
+        else {
+            name.classList.remove('error-border');
+            document.getElementById('name-error').innerText = '';
+        }
+
+        var number = document.getElementById('number');
+        if(number.value == "" ){
+            erroFlag = true;
+            number.classList.add('error-border');
+            document.getElementById('number-error').innerText= 'thish feild requird';
+        }
+        else if( !(/^\d+$/.test(number.value)) ){
+            erroFlag = true;
+            number.classList.add('error-border');
+            document.getElementById('number-error').innerText= 'must be number'; 
+        }
+        else{
+            number.classList.remove('error-border');
+            document.getElementById('number-error').innerText = '';
+        }
+        
+        if(erroFlag == false){
+            let digit = document.getElementById("number").value;
+            let i = 1;
+            do{
+                op.innerHTML += `<p> ${i} : ${name.value} </p>`;
+                i++;
+            }while(i <= digit);
+        }
+    }
+</script>

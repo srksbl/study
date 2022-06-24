@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Validation</title>
+    <style>
+        .continer {
+            width: 40%;
+            margin: auto auto;
+        }
+        .form-control {
+            margin-top: 15px;
+        }
+        .form-control input {
+            width: 100%;
+            padding: 10px;
+        }
+        .error {
+            color: red;
+        }
+        .error-border {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <h1>Form Validation</h1>
+        <div class="form-control">
+            <ul id="error">
+
+            </ul>
+        </div>
+        <div class="form-control">
+            <input type="text" id="firstName" placeholder="First Name" tabindex="1">
+        </div>
+        <div class="form-control">
+            <input type="text" id="lastName" placeholder="Last Name" tabindex="2">
+        </div>
+        <div class="form-control">
+            <input type="text" id="mobile" placeholder="Mobile No." tabindex="3">
+        </div>
+        <div class="form-control">
+            <input type="text" id="address" placeholder="Address" tabindex="4">
+        </div>
+        <div class="form-control">
+            <button onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    // const validation = (input) => {
+    //     var errorFlag = false;
+    //     if (input == '') {
+    //         errorFlag = true; 
+    //     }
+
+    //     return errorFlag;
+    // }
+
+    // var inputName = "adfasdf";
+    // var mobile = ""
+
+    // if ( validation(inputName) ) {
+    //     console.log("Value is empty");
+    // } else {
+    //     console.log("Input is valid");
+    // }
+
+    // if ( validation(mobile) ) {
+    //     console.log("Mobile is empty");
+    // } else {
+    //     console.log("Mobile is valid");
+    // }
+
+
+    // second example
+
+    const isValidate = (fname, lname, mobile, adress) => {
+        var errorBeg = [];
+
+        // validating fname
+        if (fname == '') {
+            let error = {
+                errorInputId: 'firstName',
+                message: 'This is required feild!',
+             
+            }
+            errorBeg.push(error);
+        }
+
+        // validating lname
+        if (lname == '') {
+            let error = {
+                errorInputId: 'lastName',
+                message: 'This is required feild!'
+            }
+            errorBeg.push(error);
+        }
+
+        // validating mobile
+        if (mobile == '') {
+            let error = {
+                errorInputId: 'mobile',
+                message: 'This is required feild!'
+            }
+            errorBeg.push(error);
+        } else if( mobile.length != 10 ) {
+            let error = {
+                errorInputId: 'mobile',
+                message: 'Must be 10 digit'
+            }
+            errorBeg.push(error);
+        }
+
+        // validating lname
+        if (adress == '') {
+            let error = {
+                errorInputId: 'address',
+                message: 'This is required feild!'
+            }
+            errorBeg.push(error);
+        }
+
+        return errorBeg;
+    }
+
+    // Function to get any input value by input id
+    const getInputValue = (id) => {
+        return  document.getElementById(id).value;
+    }
+
+    // function triggered when click on form button
+    const submitForm = () => {
+        removeAlreadyPlacedErrorOnHtml();
+
+        let firstName =  getInputValue('firstName');
+        let lastName =  getInputValue('lastName');
+        let mobile = getInputValue('mobile');
+        let address =  getInputValue('address');
+
+        // function to validate data and get back errors in array if invalid data
+        var errorBucket = isValidate(firstName, lastName, mobile, address);
+
+        if(errorBucket.length > 0) {      
+            errorBucket.forEach(error => {
+                var div = document.createElement("div");
+                div.className = 'error';
+
+                var span = document.createElement("span");
+                span.innerText = error.message;
+
+                div.appendChild(span);
+
+                document.getElementById(error.errorInputId).after(div);
+            });
+
+        } else {
+            alert("Submited!!!")
+        }
+    }
+
+    // remove error bucket in html
+    const removeAlreadyPlacedErrorOnHtml = () => {
+        document.querySelectorAll('.error').forEach(error => error.remove());
+    }
+
+</script>

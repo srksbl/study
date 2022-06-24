@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .form-container {
+            width: 40%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        form {
+            width: 99%;
+        }
+        .form-control input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 5px;
+            border: 1px solid blue;
+        }
+        .form-control .btn-submit {
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            width: 100px;
+            height: 35px;
+            border-radius: 5px;
+            background: #1291d6;
+            color: white;
+            border: 1px solid #1291d6;
+        }
+        .form-control .btn-submit:hover {
+            cursor: pointer;
+            background: #046294;
+        }
+        .error-border {
+            border: 1px solid red !important;
+        }
+        .error {
+            display: block;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="get" action="form.php" onsubmit="submitForm(event)">
+            <div class="title">
+                <h1>Form Validation</h1>
+            </div>
+
+            <div class="form-control">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <label class="error" id="name-error"></label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" id="number" name="number" placeholder="number">
+                <label class="error" id="number-error"></label>
+            </div>
+    
+            <div class="form-control">
+                <button class="btn-submit" id="btnSubmit">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function submitForm(event) {
+
+        // name validation
+        var name = document.getElementById('name');
+
+        if (name.value == '')
+        {
+            name.classList.add('error-border');
+            document.getElementById('name-error').innerText = "This field is required";
+            event.preventDefault();           
+        }
+        else if (name.value.length < 6)
+        {
+            name.classList.add('error-border');
+            document.getElementById('name-error').innerText = "Must be greater then 5 characters";
+            event.preventDefault();
+
+        }
+
+        // mobile nunmber validation
+        var number = document.getElementById('number');
+ 
+        if (number.value == '')
+        {
+            number.classList.add('error-border');
+            document.getElementById('number-error').innerText = "This field is required";
+            event.preventDefault();
+
+        }
+        else if(number.value.length != 10)
+        {
+            number.classList.add('error-border');
+            document.getElementById('number-error').innerText = "Must be 10 digit";
+            event.preventDefault();
+
+        }
+        else if ( !(/^\d+$/.test(number.value)) )
+        {
+            number.classList.add('error-border');
+            document.getElementById('number-error').innerText = "Must be number";
+            event.preventDefault();
+
+        }
+        
+    }
+</script>

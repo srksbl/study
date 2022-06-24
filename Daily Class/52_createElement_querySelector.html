@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Seletor</title>
+</head>
+<body>
+    <div class="container" id="cont">
+        <div id="f1" class="para">Hello</div>
+        <div id="f2" class="para">World</div>
+    </div>
+</body>
+</html>
+
+<script>
+    // var p1 = document.getElementById('f1').innerText;
+    // console.log(p1);
+
+     var p11 = document.querySelector('.para1').innerHTML;
+     console.log(p11);
+
+    // var p12 = document.querySelectorAll('div');
+    // console.log(p12);
+
+    // document.getElementById('cont').innerHTML += `
+    //     <div id="f3" class="para">Shahrukh</div>
+    // `;
+
+
+    var div = document.createElement("div");
+    div.className = "heading";
+    div.style.background = "green"
+    div.style.fontSize = "18px";
+    div.innerText = "Hello Shakeel"
+
+
+    document.getElementById("f2").after(div);
+</script>

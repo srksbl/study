@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <style>
+        table tr td, th {
+            padding: 10px;
+        }
+        button {
+            padding: 5px;
+            background: rgb(94, 94, 228);
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table width="100%" cellspacing="0" cellpadding="0" border="1px" >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Full Name</th>
+                    <th>Standard</th>
+                    <th>Address</th>
+                    <th>Action <button onclick ="createForm()">+</button></th>
+                  </tr>
+            </thead>          
+            <tbody id="mytable"></tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
+<script>
+    const users = [
+        {
+            id: 1,
+            fname: 'Areeb',
+            lname: 'Kha',
+            standard: '3rd class',
+            address: 'Niyawali',
+            fullName: function() {
+                return this.fname + " " + this.lname;
+            }
+        },
+        {
+            id: 2,
+            fname: 'Shahrukh',
+            lname: 'Khan',
+            standard: 'B.Tech',
+            address: 'Niyawali',
+            fullName: function() {
+                return this.fname + " " + this.lname;
+            }
+        },
+        {
+            id: 3,
+            fname: 'Shahnawaz',
+            lname: 'Khan',
+            standard: 'B.SC',
+            address: 'Niyawali',
+            fullName: function() {
+                return this.fname + " " + this.lname;
+            }
+        },
+        {
+            id: 4,
+            fname: 'Mohsin',
+            lname: 'Khan Ali',
+            standard: '10th',
+            address: 'Rustumpur Niyawali',
+            fullName: function() {
+                return this.fname + " " + this.lname;
+            }
+        }
+    ];
+
+    function displayTableData() {
+        let text = '';
+        users.forEach(function(item, index) {
+            text += `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.fname}</td>
+                    <td>${item.lname}</td>
+                    <td>${item.fullName()}</td>
+                    <td>${item.standard}</td>
+                    <td>${item.address}</td>
+                    <td>
+                        <button onClick='deleteItem(${item.id})'>Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+
+        document.getElementById("mytable").innerHTML =text;
+    }
+
+    displayTableData();
+
+
+    function deleteItem(id) {
+        users.forEach(function(el, index){
+            if(el.id == id) {
+                users.splice(index, 1);
+            }
+        });
+
+        displayTableData();
+    }
+
+    function createForm(){
+        
+    }
+
+
+</script>

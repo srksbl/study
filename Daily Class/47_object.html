@@ -1,0 +1,58 @@
+<script>
+    const obj = {
+        id: 1,
+        name: 'shahrukh',
+        mobile: '908765432'
+    }
+    // Add new key value
+    obj.address = 'Niyawli';
+    // other way to add key value in object
+    Object.assign(obj, { gender: 'Male' });
+    // delete obj.name;
+
+    console.log(obj);
+
+    console.log("=============Multiple Object=============");
+    // json (java script object notation)
+    let obj2 = [
+        {
+            id: 1,
+            fname: 'Areeb',
+            lname: 'Khan',
+            mobile: '980765432',
+            address: 'Sambhal',
+            gender: 'Male'
+        },
+        {
+            id: 2,
+            fname: 'Shahrukh',
+            lname: 'Ahmad',
+            mobile: '99870654332',
+            address: 'Moradabad',
+            gender: 'Male'
+        },
+        {
+            id: 3,
+            fname: 'Shahnawaz',
+            lname: 'Khan Ali',
+            mobile: '9980765433',
+            address: 'Niaywali',
+            gender: 'Male',
+            abc: 'sanu',
+        }
+    ];
+
+    // obj2.push(obj);
+
+    // console.log(obj2)
+
+    // obj2.forEach(function(el) {
+    //     console.log(el.fname);
+    // });
+
+    obj2[2].abc = 'xyz';
+    obj2[2].zzz = 'xyz';
+
+    console.log(obj2);
+
+</script>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header Footer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <style>
+        body {
+            margin: 0;
+        }
+        .row {
+            display: flex;
+        }
+        .col-6 {
+            margin-right: 10px;
+            text-align: justify;
+        }
+        .header-content {
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title {
+            margin-top: -35px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        ul li {
+            float: left;
+            list-style: none;
+            border-right: 1px solid #fff;
+        }
+        li:last-child {
+            border-right: none;
+        }
+        ul li a {
+            color: #fff;
+            padding: 14px 16px;
+            display: block;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            background-color: green;
+        }
+        .active {
+            background-color: #04AA6D;
+        }
+        .wrapper {
+            margin: 5px;
+            clear: both;
+        }
+        footer {
+            position: fixed;
+            background-color: grey;
+            color: #FFF;
+            text-align: center;
+            padding: 1px 0;
+            bottom: 0;
+            width: 100%;
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" width="200" alt="">
+                </div>
+                <div class="title">
+                    <h1 class="font-effect-emboss">Choudhry Pal Nursery</h1>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="row wrapper">
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div>
+            </div>
+            <!-- <div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div><div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita saepe corporis doloremque porro doloribus. Tempore commodi qui assumenda illo, libero, debitis nihil in quis ducimus animi delectus officiis nemo pariatur.</p>
+                </div>
+                <div class="col-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga optio, quaerat earum laudantium itaque sint, consequuntur laborum, in sapiente ratione corporis? Doloribus, numquam vitae. Dolore accusantium praesentium dicta provident aperiam?</p>
+                </div>
+            </div> -->
+        </section>
+
+        <footer>
+            <p>@ 2022 Copyright</p>
+        </footer>
+    </div>
+</body>
+</html>

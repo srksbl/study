@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Example</title>
+    <style>
+        .pargrah {
+            text-align: justify;
+            background-color: rgba(0, 128, 0, 0.151);
+            padding: 20px;
+        }
+        .pargrah p {
+            line-height: 1.5em;
+        }
+        .button button {
+            padding: 15px;
+            background: rgba(20, 20, 244, 0.642);
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        .button button:hover {
+            cursor: pointer;
+            background: rgba(4, 4, 145, 0.914);
+        }
+        .mt-10 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Js Example to show/hide and image change by js</h1>
+        </div>
+
+        <div class="pargrah">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, perspiciatis omnis doloribus placeat tempore, est necessitatibus modi voluptatibus quo animi recusandae maiores saepe obcaecati sunt facere deleniti harum sequi aperiam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nisi modi voluptatibus totam, sed fugiat tempora assumenda reiciendis, vero earum est consequatur nemo. Architecto quod vel animi illo illum magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rem sequi quidem velit consequatur minus aliquam, suscipit harum impedit quas ducimus repudiandae quibusdam nesciunt sed, dolorem minima non cum! Enim?</p>
+        </div>
+
+        <div class="button mt-10">
+            <button>Hide</button>
+        </div>
+
+        <div class="rashmika-img mt-10">
+            <img id="rmimg" src="images/1.jpg" width="200" alt="">
+        </div>
+
+        <div class="button mt-10">
+            <button onclick="changeImage()">Change Image</button>
+        </div>
+
+
+
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+    // function to change the imag on every click
+    function changeImage() {
+        var img = document.getElementById('rmimg');
+
+        var currentPathOfImage = img.src;
+
+        var arrayDataOfPath = currentPathOfImage.split("/");
+
+        var lastIndexOfArray = arrayDataOfPath.length - 1;
+
+        var currentImg = arrayDataOfPath[lastIndexOfArray];
+
+        if (currentImg == "1.jpg")
+        {
+            img.src = "images/2.jpg"
+        }
+        else
+        {
+            img.src = "images/1.jpg"
+        }
+    }
+
+    // Homework write here your new function to show and hide paragraph
+    
+
+</script>

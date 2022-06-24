@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback ex 3 time</title>
+</head>
+<body>
+    <h1 id = 'output'></h1>
+    
+</body>
+</html>
+<script>
+        setTimeout(function() {
+            show('SRK');
+        }, 3000);
+
+        setTimeout( () => {
+            show("Parineeti");
+        } , 5000 );
+
+    
+        function show(data) {
+            document.getElementById('output').innerHTML = "I love you !! " + data ;
+        }
+
+        function before(num1, num2,num3){
+            let count = num1 + num2 + num3;
+            return count;
+        }
+
+        let result = before(1,2,3);
+
+        show(result);
+
+</script>

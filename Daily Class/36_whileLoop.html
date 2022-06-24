@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>while Loop</title>
+    <style>
+      .mt-10 {
+        margin-top: 10px;
+      }
+      .error-border {
+        border: 1px solid red !important;
+      }
+      .error {
+        display: block;
+        color: red;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>While Loop</h1>
+
+    <div class="mt-10">
+      <input type="text" id="name" />
+      <label class="error" id ="name-error"> </label>
+    </div>
+
+    <div class="mt-10">
+      <input type="text" id ="number" />
+      <label class="error" id="number-error"> </label>
+    </div>
+
+    <div class="mt-10">
+      <button onclick="showTable()">Show</button>
+    </div>
+
+    <div id="output"></div>
+  </body>
+</html>
+
+<script>
+  function showTable() {
+    var op = document.getElementById("output");
+    op.innerHTML = null;
+
+    var erroFlag = false;
+
+    var input = document.getElementById("name");
+    if (input.value == "") {
+        erroFlag = true;
+        input.classList.add("error-border");
+        document.getElementById("name-error").innerText = "This field required";
+    }
+
+    var number = document.getElementById("number");
+    if (number.value == "") {
+        erroFlag = true;
+        number.classList.add("error-border");
+        document.getElementById("number-error").innerText = "This field required";
+    } else if ( !(/^\d+$/.test(number.value)) ) {
+        erroFlag = true;
+        number.classList.add("error-border");
+        document.getElementById("number-error").innerText = "Must be number";
+    }
+
+
+    // Check there is no error in errorFlag - !erroFlag
+    if (erroFlag == false)
+    {
+        let digit = document.getElementById("number").value;
+        let i = 1;
+        while (i <= digit)
+        {
+            op.innerHTML += `<p> ${i} : ${input.value} </p>`;
+            i++;
+        }
+    }    
+
+  }
+</script>

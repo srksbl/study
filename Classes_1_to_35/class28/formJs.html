@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Html</title>
+    <style>
+        .form-control {
+            margin-top: 10px;
+        }
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" onsubmit="return false;">
+        <h1>Form</h1>
+        <div class="form-control">
+            <input type="number" id="firstOperand" placeholder="Enter first number">
+        </div>
+        <div class="form-control">
+            <input type="number" id="sedcondOperand" placeholder="Enter second number">
+        </div>
+        <div class="form-control">
+            <button id="btn">Click</button>
+        </div>
+        <div class="form-control">
+            Sum of above 2 number is: <strong id="output"></strong>
+        </div>
+
+    </form>
+
+    <script>
+        var button = document.getElementById('btn');
+        
+        button.addEventListener('click', function() {
+            var fisrtValue = document.getElementById('firstOperand').value;
+            var secondValue = document.getElementById('sedcondOperand').value;
+
+            var sum = parseInt(fisrtValue) + parseInt(secondValue);
+
+            document.getElementById('output').innerText = sum;
+
+        });
+    
+    </script>
+    
+</body>
+</html>

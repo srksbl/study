@@ -1,0 +1,16 @@
+<script>
+var array = ['Shahnawaz', '9087654321', ['Niyawali', 'Sambhal', 'UP'], 'Male'];
+
+array.forEach(function(el, index) {
+    if (typeof el == 'object') {
+        el.forEach(function(item) {
+            console.log(item);
+        });
+    } else {
+        console.log(el);
+    }
+});
+
+console.log("=======================");
+console.log(array[2][2]);
+</script>

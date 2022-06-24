@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            .form-control {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sum of two number</h1>
+        <div class="form-control">
+            <input type="text" id="firstValue">
+        </div>
+
+        <div class="form-control">
+            <input type="text" id="secondValue">
+        </div>
+
+        <div class="form-control">
+            <button onclick="submitForm()">Sum</button>
+        </div>
+
+        <div class="form-control" id="output"></div>
+    </body>
+</html>
+
+<script>
+
+    function sum(firstValue, secondValue)
+    {
+        return parseInt(firstValue) + parseInt(secondValue);
+    }
+
+    function submitForm()
+    {
+        var f = document.getElementById('firstValue').value;
+        var s = document.getElementById('secondValue').value;
+
+        var op;
+
+        if(f == "" || s == "")
+        {
+            op = sum(50, 50);
+        }
+        else
+        {
+            op = sum(f, s);
+        }
+
+        document.getElementById('output').innerHTML = `Sum of : ${op}`;
+    }
+   
+</script>

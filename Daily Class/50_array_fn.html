@@ -1,0 +1,54 @@
+<script>
+    const data = [100, 500, 50, 10];
+
+    // /* Example of includes and indexOf */
+    // var isExist = data.includes(500);
+    // if (data.includes(500)) {
+    //     var getIndex = data.indexOf(500)
+    //     data[getIndex] = data[getIndex] - (data[getIndex] * 10) / 100;
+
+    // } else {
+    //     console.log("Value not exist");
+    // }
+
+    //  console.log(data);
+
+    /* Example of findIndex */
+    // const array1 = [5, 12, 8, 130, 44];
+    // let res = array1.findIndex(function (el) {
+    //     return el == 8
+    // }) 
+    // console.log(res);
+
+    // /* Example of map function */
+    // var mappedData = data.map(function(item, index, array){
+    //     return item - 10;
+    // });
+    // console.log(mappedData);
+
+    /* Same map example with foreach loop */
+    var newData = [];
+    data.forEach(function(el) {
+        newData.push(el - 10);
+    });
+    console.log(newData);
+
+    var rr = data.filter(function(item, index, array){
+       return item > 10;
+    });
+    console.log(rr);
+
+    var totalAmount = 0;
+    data.forEach(function(el){
+        totalAmount += el;
+    });
+
+    console.log(totalAmount);
+
+    var totalAmount = data.reduce(function(accumulator, value){
+        return accumulator + value;
+    }, 0);
+
+    console.log(totalAmount)
+
+</script>
