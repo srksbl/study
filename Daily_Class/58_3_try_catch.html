@@ -1,0 +1,30 @@
+<script>
+    function init(value) {
+        try {
+
+            withrdraw(value);
+
+        } catch (error) {
+
+            if (error.message == 'xyz is not defined') {
+
+                withrdrawIfErrorOccured(value)
+            }
+        }
+    }
+
+    init(100); // function trigger or calling
+    
+
+    function withrdraw(value) {
+       
+       console.log(xyz + 500);
+    }
+
+   function withrdrawIfErrorOccured(value) {
+
+    console.log(value + 500)
+
+   }
+
+</script>

@@ -1,0 +1,37 @@
+<script>
+  function init(value) {
+    try {
+        let error = false;
+        let msg;
+
+        // If value is greater then 500
+        if (value >= 500) {
+            // write here code to do something or ATM money withdraw
+            if (value == 500 || value == 2000) {
+                console.log("Money is deducting be patient....");
+            } else {
+                error = true;
+                msg = "Sorry! You can withdraw only 500 or 2000 combination notes."
+            }
+
+        } else {
+            error = true;
+            msg = "Sorry! You can withdraw 500 above."
+        }
+
+        // Error checking - if errror is found throwing error to catch block
+        if (error) {
+            throw new Error(msg);
+        }
+
+    } catch (exception) {
+
+      console.log(exception.message);
+
+    }
+  }
+
+  init(200); // triggered
+
+
+</script>

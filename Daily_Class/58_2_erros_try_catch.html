@@ -1,0 +1,56 @@
+<script>
+    try {
+        console.log("Try block is completed!");
+        sum(10, 20);
+    }
+    catch(error) {
+        console.log("Catch block is completed!");
+
+        console.log("My error - ", error.message);
+        add(10, 20);
+    }
+    finally {
+        console.log("Final block is completed!");
+    }
+
+    function add(a, b) {
+        console.log(a + b)
+    }
+
+
+    try
+    {
+      var name = "shakeel";
+      
+      if (name != "Shahrukh") {
+        throw "Name is not shahrukh";
+        // throw new Error("Name is not shahrukh"); // through exception by Error class
+      }
+    }
+    catch (error) {
+        console.log(error);
+
+        // console.log(error.message);
+    }
+
+
+
+    function init(name) {
+        try {
+            if (name == "shahrukh") {
+                console.log("Correct! Name is shahrukh")
+            } else {
+                throw new Error("Wrong! The name is not shahrukh");
+            }
+        } catch (error) {
+            console.log(error.message);
+
+            setTimeout(() => {
+                init("shahrukh");
+            }, 5000);
+        }
+    }
+
+    init("sadfsdaf");
+
+</script>

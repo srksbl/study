@@ -1,0 +1,15 @@
+<script>
+    var number = "5"
+    // var pattern = /^[0-9]$/
+    var result = /^[0-9]$/.test(number);
+    console.log("Is only digit - ", result );
+    
+
+    // Atleast on Capital letter, one small letter and one special chracter and one number
+    // 9745, adfa, HJH, @
+    var password = "99@Shahrukh";
+
+    var res = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)/.test(password);
+
+    console.log("is Password combination correct - ", res);
+</script>

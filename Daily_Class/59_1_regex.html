@@ -1,0 +1,43 @@
+<script>
+    var text = "Hello Shahrukh Khan! How are you Shahrukh? Whats going on in your life.";
+
+    // search by regex
+    var result = text.search(/Shahrukh/i);
+    console.log("Search result - ", result);
+
+    // search and replace
+    var res = text.replace(/Shahrukh/g, "Srk");
+    console.log("Replace result - ", res);
+
+
+
+    // match important method to search and get value
+    // var response = text.match(/^Shahrukh/g); // to check starting
+    var response = text.match(/Shahrukh/g);
+    console.log(response);
+
+    // to match range
+    var text2 = "Hello";
+    // var result1 = [...text2.matchAll(/[a-z]/g)];
+    var result2 = text2.match(/[a-zA-Z]/g);
+    console.log(result2);
+
+    // to match alternative
+    var text3 = "hello world";
+    var result3 = text3.match(/hello|world/);
+    console.log(result3);
+
+    // to match \d digits only
+    var text4 = "3563456";
+    var result4 = text4.match(/\d/g);
+    console.log(result4);
+    var result4 = text4.match(/[0-9]/g);
+    console.log(result4);
+
+    // \s is for whitespace
+    console.log(text.match(/\s/g));
+
+    // \b to check match starting
+    console.log(text.match(/\bHello/g)); // equivalent to ^
+
+</script>

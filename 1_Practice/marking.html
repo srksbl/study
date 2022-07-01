@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext");
+
+      body {
+        background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        background-position: center;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+        font-family: "Noto Sans", sans-serif;
+      }
+      .box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.89);
+        border-radius: 3px;
+        padding: 70px 100px;
+      }
+      .btn {
+        color: #fff;
+        background-color: #e74c3c;
+        outline: none;
+        border: 0;
+        color: #fff;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        margin-top: 50px;
+        border-radius: 2px;
+        cursor: pointer;
+        position: relative;
+      }
+      label {
+        color: white;
+      }
+      .input-container input {
+        width: 100%;
+        padding: 10px;
+      }
+      .contain {
+        background-color: white;
+        color: black;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+      }
+      .error-border {
+        border: 1px solid red !important;
+      }
+      #error {
+        color: red;
+        margin-top: 5px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="input-container">
+        <label>Adhar Number</label>
+        <input type="text" id="filed" required="" />
+        <br>
+        <label id="error"></label>
+      </div>
+
+      <div id="opy"></div>
+
+      <button class="btn" onclick="markingData()">Marking</button>
+    </div>
+  </body>
+</html>
+<script>
+  function markingData() {
+    var store = document.getElementById("filed").value;
+
+    var erroFlag = false;
+
+    if (store == "") {
+      erroFlag = true;
+      document.getElementById("error").innerText = "This is requird feild!";
+    } else {
+      document.getElementById("error").innerText = "";
+    }
+
+    if (!erroFlag) {
+        let Data = store.substr(store.length - 4).padStart(store.length, "*");
+        document.getElementById("opy").innerHTML = `<div class='contain'> ${Data} </div>`;
+    }
+  }
+</script>
