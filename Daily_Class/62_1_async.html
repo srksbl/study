@@ -1,0 +1,37 @@
+<script>
+
+    // callback hell example
+
+    // first output should be by this function
+    function getName(name, callback) {
+        setTimeout(() => {
+            console.log(name);
+            callback("Hello", last);
+        }, 500);
+    }
+
+    // 2nd output should be by this function
+    function middle(lastName, callback) {
+        setTimeout(() => {
+            console.log(lastName);
+            callback(abc);
+        }, 200);
+    }
+
+    // 3rd output should be by this function
+    function last(callback) {
+        console.log("End!");
+        callback()
+    }
+
+    // 4th output should be by this function
+    function abc() {
+        console.log("Ver Last");
+    }
+
+
+    // main function calling to make async to sync
+    getName('Shahrukh khan', middle);
+
+
+</script>

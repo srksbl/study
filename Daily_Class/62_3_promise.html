@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <br>
+    <div>
+        <input type="text" id="text" placeholder="Enter number">
+        <p>Check above number is less then 20</p>
+    </div>
+    <br>
+    <div>
+        <button onclick="show()">Click</button>
+    </div>
+    <br>
+
+    <div id="output"></div>
+    
+</body>
+</html>
+
+<script>
+    function show() {
+        let val = document.querySelector("#text").value;
+
+        checkValue(parseInt(val)).then(res => {
+            document.querySelector("#output").innerHTML = res;
+        }).catch(error => {
+            document.querySelector("#output").innerHTML = error;
+        });
+    }
+
+
+    function checkValue(val) {
+        return new Promise((resolve, reject) => {
+            if (parseInt(val) < 20) {
+                resolve("This is less then 20");
+            }
+            else {
+                reject("This is greater then 20");
+            }
+        })
+    }
+</script>
