@@ -1,0 +1,63 @@
+<script>
+    // by promises
+
+    // first output should be by this function
+    function getName(data) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(data);
+                resolve("success");
+            }, 500);
+        });
+        
+    }
+
+    // 2nd output should be by this function
+    function middle(data) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(data);
+                resolve("success");
+            }, 500);
+        });
+    }
+
+    // 3rd output should be by this function
+    function third(data) {
+        console.log(data);
+    }
+
+    // 4th output should be by this function
+    function last() {
+        console.log("End!");
+    }
+
+
+    async function init() {
+        var getNameV = await getName("First - Shakeel Ahamed");
+
+        var middleV = await middle("Second - Shahrukh KHan");
+
+        var thirdV = await third("Third - Shahnawaz Khan");
+
+        last();
+
+    }
+
+    init();
+    
+    // getName("First - Shakeel Ahamed")
+    //     .then(response => {
+    //         middle("Second - Shahrukh KHan")
+    //             .then(res => {
+    //                 third("Third - Shahnawaz Khan");
+    //                 last();
+    //             })
+    //             .catch(error => {
+    //                 console.log(error)
+    //             })
+    //     })
+    //     .catch(error => {
+    //         console.log(error)
+    //     });
+</script>

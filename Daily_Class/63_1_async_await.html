@@ -1,0 +1,33 @@
+<script>
+    // function getName() {
+    //     return "Shakeel Ahamed";
+    // }
+
+    // var response = getName();
+
+    // console.log(response);
+
+
+
+    function getName() {
+        return new Promise((resolve, reject) => {
+            try {
+                resolve("Shakeel Ahamed");
+            } catch (e) {
+                reject(e)
+            }
+        })
+    }
+
+    // getName().then(res => console.log(res) ).catch(error => console.log(error) );
+
+    async function show() {
+        var response = await getName();
+        
+        console.log(response);
+
+        console.log("End!");
+    }
+
+    show();
+</script>
