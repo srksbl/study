@@ -1,0 +1,25 @@
+<script>
+
+    const person1 = {
+      firstName: "Shahrukh",
+      lastName: "Khan"
+    }
+  
+    const person2 = {
+      firstName: "Areeb",
+      lastName: "Ali"
+    }
+  
+    const person = {
+      fullName: function (city, state) {
+        return `${this.firstName} ${this.lastName} => ${city}, ${state}`;
+      }
+    }
+  
+  
+    var name = person.fullName.apply(person1, ["Sambhal", "UP"]);
+  
+    console.log(name)
+  
+  
+  </script>

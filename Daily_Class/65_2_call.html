@@ -1,0 +1,25 @@
+<script>
+
+  const person1 = {
+    firstName: "Shahrukh",
+    lastName: "Khan"
+  }
+
+  const person2 = {
+    firstName: "Areeb",
+    lastName: "Ali"
+  }
+
+  const person = {
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+
+  var name = person.fullName.call(person1);
+
+  console.log(name)
+
+
+</script>

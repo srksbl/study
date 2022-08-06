@@ -1,0 +1,47 @@
+<script>
+
+    // first example
+
+    function makeFunc() {
+
+        const name = 'Shahrukh';
+
+        function displayName() {
+            console.log(name);
+        }
+
+        return displayName;
+
+    }
+
+    const myFunc = makeFunc();
+
+    myFunc();
+
+
+    // second example
+
+    // in closure inner function have below acces
+    // global variable access
+    // parent function variable access
+    // parent argumnet access
+
+    var state = "UP";
+
+    function myClosure(name) {
+
+        let city = "Sambhal";
+
+        function showName() {
+            return name + " " + city + " " + state;
+        }
+
+        return showName;
+
+    }
+
+    const getFn = myClosure("Shahrukh Khan");
+
+   console.log( getFn() );
+
+</script>

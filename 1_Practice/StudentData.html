@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const student1 = {
+        firstName:"Shahnawaz",
+        lastName: "Ali",
+        Standard: "Bsc",
+        marrksOptain: "450",
+        marksOutof: "500",
+        totalSubject: "5",
+    }
+    const student2 = {
+        firstName:"Fardeen",
+        lastName: "Khan",
+        Standard: "Bsc",
+        marrksOptain: "420",
+        marksOutof: "500",
+        totalSubject: "5",
+    }
+    const student3 = {
+        firstName:"Moshin",
+        lastName: "Khan",
+        Standard: "Bsc",
+        marrksOptain: "425",
+        marksOutof: "500",
+        totalSubject: "5",
+    }
+    const student = {
+        fullName:function(){
+            return this.firstName + " " + this.lastName;
+
+        },
+        persentage:function(){
+            return this.marrksOptain*100/this.marksOutof + "%" ;
+        } 
+    }
+
+
+    var name = student.fullName.call(student2);
+    console.log(name);
+
+    var persent = student.persentage.call(student2);
+    console.log(persent);
+  </script>

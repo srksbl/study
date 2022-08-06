@@ -1,0 +1,37 @@
+<script>
+
+    class User {
+
+        constructor(name, address) {
+            this.userName = name;
+            this.userAddress = address;
+        }
+
+        getName() {
+            return this.userName;
+        }
+
+        getAddress() {
+            return this.userAddress;
+        }
+
+    }
+
+    var user1 = new User("Shahrukh Khan", "Rustumpur Niyawali");
+    var user1Name = user1.getName();
+    var user1Address = user1.getAddress();
+    console.log(user1Name);
+    console.log(user1Address);
+
+    var user2 = new User("Shakeel", "New Delhi");
+    var user2Name = user2.getName();
+    var user2Address = user2.getAddress();
+    console.log(user2Name);
+    console.log(user2Address);
+
+
+ 
+
+
+
+</script>
