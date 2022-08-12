@@ -1,0 +1,24 @@
+<script>
+    class Sum {
+        addition(op1, op2) {
+            return op1 + op2;
+        }
+    }
+
+    var obj = new Sum();
+    console.log(obj.addition(10, 15));
+    
+
+    class Show {
+        
+        getSumResult(f, s) {
+            obj = new Sum();
+            return obj.addition(f, s);
+        }
+    }
+
+    var r = new Show();
+
+    console.log(r.getSumResult(20, 40));
+    
+</script>

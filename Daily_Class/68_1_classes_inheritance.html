@@ -1,0 +1,39 @@
+<script>
+    class Person {
+        constructor(userName, age, address) {
+            this.userName = userName;
+            this.age = age;
+            this.add = address;
+        }
+
+        getUserInfo() {
+            return {
+                uName: this.userName,
+                uAge: this.age,
+                uAddress: this.add
+            };
+        }
+
+    }
+
+    // var userInfo = new Person("Shahrukh Khan", '29', "Rustumpur Niyawali");
+    // console.log(userInfo.getUserInfo());
+
+    class PremiumMember extends Person{
+        constructor(userName, age, address, mprice) {
+            super(userName, age, address);
+            this.memberprice = mprice;
+        }
+
+        getPmInfo() {
+            var data = this.getUserInfo();
+            data.vipPrice = this.memberprice;
+            return data;
+        }
+    }
+
+    var vipUser = new PremiumMember("Shahnawaz Khan", '26', 'Sambhal', '1500');
+    console.log(vipUser.getPmInfo());
+
+    
+</script>
