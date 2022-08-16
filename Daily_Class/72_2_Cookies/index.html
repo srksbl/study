@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <strong>Hello!</strong> <span id="showName"></span>
+    <br>
+    <pre>
+        {
+            "email": "shahrukhahmad142@gmail.com",
+            "password": "password1"
+        }
+    </pre>
+    <br>
+    <button onclick="getLogin()">Sign In</button>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    async function getLogin() {
+        try {
+            const data = {
+                "email": "shahrukhahmad142@gmail.com",
+                "password": "password1"
+            }
+            const response = await axios.post("https://shakeel-rest-api.herokuapp.com/v1/auth/login", data);
+            
+            console.log(response.data);
+
+            document.cookie = `token=${response.data.tokens.access.token}; expires=Tue, 17 Aug 2022 15:51:00 UTC`;
+
+            document.getElementById("showName").innerText = `${response.data.user.name}`;
+
+        } catch (error) {
+            alert(error.response.data.message);
+        }
+    }
+</script>

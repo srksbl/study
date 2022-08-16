@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+</head>
+<body>
+    <h1>Location Host</h1>
+    <button id="getHost">Get HostName</button>
+    <br/>
+    <br/>
+    <button id="getPath">Get Path</button>
+    <br/>
+    <br/>
+    <button id="getProtocol">Get Protocol</button>
+    <br/>
+    <br/>
+    <button id="getPort">Get Port</button>
+    <br/>
+    <br/>
+    <button id="assign">Assign</button>
+</body>
+</html>
+
+<script>
+    var btn = document.getElementById("getHost");
+    btn.addEventListener("click", () => {
+        const host = window.location.hostname;
+        alert(host);
+    });
+
+    var btn = document.getElementById("getPath");
+    btn.addEventListener("click", () => {
+        const path = window.location.pathname;
+        alert(path);
+    });
+
+    var btn = document.getElementById("getProtocol");
+    btn.addEventListener("click", () => {
+        const protocol = window.location.protocol;
+        alert(protocol);
+    });
+
+    var btn = document.getElementById("getPort");
+    btn.addEventListener("click", () => {
+        const port = window.location.port;
+        alert(port);
+    });
+
+
+    var btn = document.getElementById("assign");
+    btn.addEventListener("click", () => {
+        window.location.assign("https://www.w3schools.com");
+    });
+</script>

@@ -1,0 +1,37 @@
+<script>
+    function getLocationByAPI() {
+        return new Promise((resolve, reject) => {
+            if(navigator) {
+                navigator.geolocation.getCurrentPosition((response, error) => {
+                    if(response) {
+                        resolve(response);
+                    } else {
+                        reject(error);
+                    }
+                });
+            } else {
+                reject("You are using old version. Please update your browser.");
+            }
+            
+        })
+    }
+
+    async function getLocation() {
+        try {
+            const data = await getLocationByAPI();
+
+            const latiitude = data.coords.latitude;
+            const longitude = data.coords.longitude;
+
+            console.log(latiitude, longitude);
+
+        } catch (error) {
+
+            console.log(error);
+        }
+    }
+
+    getLocation();
+
+
+</script>

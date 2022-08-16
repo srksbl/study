@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+    <strong>Hello!</strong> <span id="display"></span>
+    <br>
+
+    <a href="/login.html">Login</a>
+</body>
+</html>
+
+<script>
+    /** Example 1 */
+
+    // document.cookie = "username=Shahrukh Khan; expires=Tue, 17 Aug 2022 15:51:00 UTC";
+    // document.cookie = "address=niyawli; expires=Tue, 17 Aug 2022 15:51:00 UTC";
+
+    // const uname = document.cookie;
+
+    // const arrayOfCookie = uname.split(";");
+
+    // const name = arrayOfCookie[0].split("=")[1];
+    // const address = arrayOfCookie[1].split("=")[1];
+
+    // console.log(name);
+    // console.log(address);
+
+    /** End Example 1 */
+
+    /** Example 2 */
+
+    if (!document.cookie) {
+        document.cookie = "username=Shahrukh Khan; expires=Tue, 17 Aug 2022 15:51:00 UTC";
+        document.cookie = "address=niyawli; expires=Tue, 17 Aug 2022 15:51:00 UTC";
+        alert("Cookies is set!");
+    }
+
+    var cookieData = document.cookie;
+    const arrayOfCookie = cookieData.split(";");
+    const uname = arrayOfCookie[0].split("=")[1];
+    const address = arrayOfCookie[1].split("=")[1];
+
+    document.getElementById("display").innerHTML = `${uname}, ${address}`;
+    /** End of Example 2 */
+
+
+</script>
