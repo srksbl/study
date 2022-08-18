@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Quicksand',sans-serif;
+        }
+        .container{
+            height: 570px;
+            width: 320px;
+            border-radius: 10px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: white;
+            box-shadow: rgb(0,0,0,0.15) 0px 3px 6px,rgb(0,0,0,0.23) 0px 3px 6px,;
+            overflow: hidden;
+        }
+        .display{
+            position: absolute;
+            top: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 150px;
+            width: 100%;
+            background: linear-gradient(150deg,#81fbb8,#28c76f);
+
+        }
+        #input{
+            all: unset;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            text-align: right;
+            height: 100px;
+            width: 300px;
+            font-size: 35px;
+        }
+        ::placeholder{
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display">
+            <input type="text" placeholder="0"id="input" disabled>
+        </div>
+        <div class="number-div">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button id="ac" onclick="input.value = ''">AC</button>
+            <br>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <br>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <br>
+            <button class="btn" onclick="backspace()"><i class="fa-solid fa delete-left"></i></button>
+            <button class="btn">0</button>
+            <button class="btn">.</button>
+            <br>
+            <button class="btn">/</button>
+            <button class="btn">*</button>
+            <button class="btn">+</button>
+            <button class="btn">-</button>
+            
+        </div>
+    </div>
+</body>
+</html>

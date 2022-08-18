@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <h1>Local Storage Example</h1>
+    <strong>Hello!</strong> <span id="displayName"></span>
+
+    <br><br>
+    <button onclick="remove()">Remove</button>
+</body>
+</html>
+
+<script>
+    if(!localStorage.getItem("userName")) {
+
+        const uname = "Shahrukh KHan";
+        localStorage.setItem("userName", uname);
+        alert("Local storage value is saved!");
+    }
+    
+
+    const getName = localStorage.getItem("userName");
+    document.getElementById("displayName").innerText = getName;
+
+
+    const remove = () => {
+        localStorage.removeItem("userName");
+        alert("Removed Sucessfull");
+
+        // for all localsorage data delete you can use below method.
+        // localStorage.remove();
+    }
+
+</script>

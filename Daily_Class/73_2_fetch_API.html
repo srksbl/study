@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <h2>Fetch API</h2>
+</body>
+
+</html>
+
+
+<script>
+    async function getDataFromServer() {
+        // by default it is GET request
+        fetch("https://api.github.com/users/sakmbd")
+            .then(async (res) => {
+                console.log(res.status);
+
+                const data = await res.json();
+
+                console.log(data);
+
+            }).catch(error => {
+                console.log("error", error);
+            });
+    }
+
+    getDataFromServer();
+
+
+    // fetch("https://api.github.com/users/sakmbd")
+    //     .then(async (res) => {
+
+    //         res.json().then(result => {
+
+    //             console.log(result);
+    //         });
+
+    //     }).catch(error => {
+    //         console.log("error", error);
+    //     });
+
+
+    // POST request example
+
+    /**
+    const headers = {
+        method: "post",
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    };
+
+    const data = {
+        name: "Shakeel Ahamed",
+        mobile: "9876543210"
+    }
+
+    fetch("https://api.github.com/users/sakmbd", headers, data)
+    .then(async (res) => {
+        console.log("res", res);
+    }).catch(error => {
+        console.log("error", error);
+    });
+    */
+</script>
