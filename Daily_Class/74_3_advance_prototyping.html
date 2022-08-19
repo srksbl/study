@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototyping</title>
+</head>
+<body>
+    <h2>Prototyping Advance: See console</h2>
+</body>
+</html>
+
+<script>
+  
+const arrayData = ["Shahrukh", "Khan", "Niywali"];
+
+// JS default array join method - array to string
+var result = arrayData.join(", ");
+console.log(result);
+
+// Our own array to string method
+Array.prototype.joinByShahrukh = function(seprator) {
+
+    var bucket = null;
+    for(let i = 0; i < this.length; i++) {
+        if (bucket == null) {
+            bucket = arrayData[i]
+        } else {
+            bucket = bucket + seprator + arrayData[i]
+        }
+    }
+
+    return bucket;
+}
+
+var res = arrayData.joinByShahrukh(", ");
+console.log("Result by own method - ", res);
+
+</script>
